@@ -2,15 +2,13 @@
 
 Static site. No build step, no backend. Upload the folder as it is.
 
-## Folder layout (keep exactly this)
+## Layout — everything flat, next to index.html
 ```
 index.html  subjects.html  papers.html  classes.html  about.html
-vercel.json  robots.txt
-assets/data/config.js    ← every editable detail lives here
-assets/data/papers.js    ← syllabus + past-paper engine
-assets/img/og.jpg        ← link preview image
-assets/img/ammar.jpg     ← ADD: his portrait (~1200×1500). Monogram shows until then.
+config.js   papers.js      og.jpg       vercel.json   robots.txt
+ammar.jpg   ← ADD: his portrait (~1200×1500). A monogram shows until then.
 ```
+No sub-folders. Upload every file to the repo root.
 
 ## Host on Vercel
 Push the folder to a GitHub repo → vercel.com → Add New → Project → import it →

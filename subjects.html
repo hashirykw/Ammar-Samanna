@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Subjects &amp; Syllabuses — Sir Ammar Samana">
 <meta property="og:description" content="Cambridge Accounting, Business and Economics at O Level, IGCSE, AS and A Level — every component, duration, mark total and weighting, with the full topic map for each syllabus.">
-<meta property="og:image" content="assets/img/og.jpg">
+<meta property="og:image" content="og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c9953e'/%3E%3Cstop offset='1' stop-color='%23f0d38f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23261d08'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,10 @@
   try{var t=localStorage.getItem("as-theme"); if(t) d.setAttribute("data-theme",t); else if(matchMedia("(prefers-color-scheme: light)").matches) d.setAttribute("data-theme","light");}catch(e){}
   var rm=matchMedia("(prefers-reduced-motion: reduce)").matches; if(rm) d.classList.add("rm");
   try{ if(!rm && !sessionStorage.getItem("as-seen")) d.classList.add("preload"); }catch(e){}
+  /* failsafe: the loader can never hang and content can never stay hidden */
+  function bail(){ if(d.classList.contains("ready")) return; d.classList.remove("preload"); d.classList.add("no-motion","ready"); }
+  setTimeout(bail, 5500);
+  addEventListener("error", function(e){ if(e instanceof ErrorEvent || (e.target && e.target.tagName === "SCRIPT")) setTimeout(bail, 50); }, true);
 })();
 </script>
 <style>
@@ -670,8 +674,8 @@ textarea.inp{resize:vertical;min-height:6rem}
   </div>
 </div>
 
-<script src="assets/data/config.js"></script>
-<script src="assets/data/papers.js"></script>
+<script src="config.js"></script>
+<script src="papers.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" defer></script>

@@ -97,9 +97,9 @@ window.SITE = {
   },
 
   /* ---- photo --------------------------------------------------------
-     Drop a portrait at assets/img/ammar.jpg (about 1200×1500).
+     Upload a portrait named ammar.jpg next to index.html (about 1200×1500).
      Missing → a designed monogram plate is shown instead.              */
-  photo: "assets/img/ammar.jpg",
+  photo: "ammar.jpg",
 
   /* ---- past paper PDFs ---------------------------------------------
      Folder URL of the paper PDFs (Cambridge filenames, e.g.
