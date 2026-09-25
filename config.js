@@ -2,12 +2,12 @@
    SIR MUHAMMAD AMMAR SAMANA — SITE CONFIG
    Built by Nexlyr Solutions.
 
-   This is the ONLY file you edit for contact details, links and campus
-   info. Every page on the site reads from here.
+   The ONLY file you edit for contact details, links, campus info,
+   intake dates, results, reviews and lectures. Every page reads it.
 
-   RULE: anything marked "TO CONFIRM" is deliberately blank. Leave it
-   blank and the site hides that element instead of showing a dead link
-   or an invented number. Nothing on this site is made up.
+   RULE: anything marked "TO CONFIRM" is deliberately blank. Blank
+   fields and empty lists are HIDDEN automatically — the site never
+   shows a dead link, an invented number or a placeholder review.
    ===================================================================== */
 
 window.SITE = {
@@ -19,13 +19,16 @@ window.SITE = {
   slogan:    "Samana Ka Zamana",
   tagline:   "A teacher by passion, an entrepreneur by profession.",
   bioLine:   "More than an Accounting teacher — a mentor who turns concepts into confidence, and students into achievers.",
+  welcome:   "Welcome to the journey of excellence.",
   credential:"CAIE certified Accounting and Business teacher",
+  roles:     ["Tutor", "Lecturer", "Facilitator", "Academic Coordinator"],
+  teaches:   "O and A Level Accounting, Business and Economics",
   city:      "Karachi",
   country:   "Pakistan",
 
   /* ---- contact ----------------------------------------------------
-     whatsapp: digits only, country code first, no + or spaces.
-     Taken from his own public registration post.                      */
+     whatsapp: digits only, country code first. From his own public
+     registration post.                                                */
   whatsapp:  "923323649170",
   phoneShow: "+92 332 3649170",
   email:     "",                // TO CONFIRM
@@ -35,65 +38,75 @@ window.SITE = {
   facebook:  "https://www.facebook.com/ammar.samana",
   instagram: "https://www.instagram.com/ammar.samana",
   linkedin:  "",                // TO CONFIRM — exact profile URL
-  youtube:   "",                // TO CONFIRM — exact channel URL
+  youtube:   "",                // TO CONFIRM — exact channel URL (enables the Lectures section)
 
-  /* ---- where he teaches -------------------------------------------
-     Add or remove campuses freely — the site renders whatever is here. */
+  /* ---- where he teaches ------------------------------------------- */
   campuses: [
     { name: "Bahadurabad", area: "Bahadurabad, Karachi", note: "On-campus classes" }
     // TO CONFIRM — add further campuses with exact addresses
   ],
-  online: true,                 // live online classes offered
+  online: true,
 
   /* ---- affiliations (from his public profiles) -------------------- */
-  affiliations: [
-    "Glide Guide Consultancy",
-    "Iqra University",
-    "Titan College"
-  ],
+  affiliations: ["Glide Guide Consultancy", "Iqra University", "Titan College"],
 
   /* ---- class timings ----------------------------------------------
-     LEAVE EMPTY unless these are the CURRENT standing timings. The site
-     shows a "timings on request" state when this array is empty, which
-     is better than publishing a stale timetable.
-
-     For reference, his own orientation post used this order:
-       A2 7:30–8:30pm · AS 8:30–9:30pm · O Level / IGCSE 9:30–10:30pm
-     Confirm before uncommenting.                                      */
+     Only the CURRENT standing timetable. Empty → "confirmed per intake".
+     His own orientation post used this order (confirm before enabling):
+       A2 7:30–8:30pm · AS 8:30–9:30pm · O Level / IGCSE 9:30–10:30pm   */
   timings: [
     // { level: "A2",              time: "7:30 – 8:30 pm"  },
     // { level: "AS",              time: "8:30 – 9:30 pm"  },
     // { level: "O Level / IGCSE", time: "9:30 – 10:30 pm" }
   ],
 
-  /* ---- enrolment --------------------------------------------------- */
+  /* ---- intake countdown -------------------------------------------
+     Set a real date/time and a live countdown appears on the Classes
+     page and the home page. Leave "" to hide it.
+     Format: "2026-10-11T19:30:00+05:00"                               */
+  intakeDate:  "",
+  intakeLabel: "Next intake begins",
   intakeOpen:  true,            // false → CTAs switch to "Join the waitlist"
-  sessionYear: "2027",          // exam session currently being prepared
+  sessionYear: "2027",
 
-  /* ---- results / numbers -------------------------------------------
-     DELIBERATELY EMPTY. Do not put estimates here. Whatever you type
-     appears publicly as his own claim, so only fill it with figures he
-     will stand behind.                                                 */
+  /* ---- introduction video -----------------------------------------
+     A YouTube link to his introduction. Empty → button hidden.         */
+  introVideo: "",
+
+  /* ---- results -----------------------------------------------------
+     Only real, verifiable figures. Empty list → section hidden.
+     { value: "12", label: "A* in 9706", note: "May/June 2025" }        */
+  results: [],
+
+  /* ---- student reviews ---------------------------------------------
+     Only real reviews, with the student's permission. Empty → hidden.
+     { quote: "…", name: "First name L.", meta: "A2 Accounting, 2025" } */
+  reviews: [],
+
+  /* ---- lectures ----------------------------------------------------
+     Links to his published lectures (YouTube etc). Empty → section
+     shows only the channel link (if youtube is set) or is hidden.
+     { title: "Bank reconciliation", url: "https://…", level: "O Level", subject: "Accounting", free: true } */
+  lectures: [],
+
+  /* ---- numbers ------------------------------------------------------
+     DELIBERATELY EMPTY. Only figures he will stand behind publicly.    */
   claims: {
-    yearsTeaching:  "",         // TO CONFIRM
-    studentsTaught: "",         // TO CONFIRM
-    topGrades:      ""          // TO CONFIRM
+    yearsTeaching:  "",
+    studentsTaught: ""
   },
 
   /* ---- photo --------------------------------------------------------
-     Drop a JPG at assets/img/ammar.jpg. If the file is missing the site
-     shows a designed monogram plate instead of a broken image.         */
+     Drop a portrait at assets/img/ammar.jpg (about 1200×1500).
+     Missing → a designed monogram plate is shown instead.              */
   photo: "assets/img/ammar.jpg",
 
-  /* ---- past paper PDFs ----------------------------------------------
-     Point this at the folder holding the paper PDFs and the whole Past
-     Papers portal goes live at once. While it is empty the portal shows
-     a clean "request access" state — never a broken link.
-
-     Example: "https://files.ammarsamana.com/papers/"                    */
+  /* ---- past paper PDFs ---------------------------------------------
+     Folder URL of the paper PDFs (Cambridge filenames, e.g.
+     9706_s23_qp_22.pdf). Empty → portal shows "Request access".        */
   pdfBase: "",
 
-  /* ---- agency credit -------------------------------------------------- */
+  /* ---- agency credit ------------------------------------------------ */
   agency:    "Nexlyr Solutions",
   agencyUrl: "https://nexlyr.solutions"
 };
