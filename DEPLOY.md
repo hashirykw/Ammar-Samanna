@@ -14,7 +14,12 @@ No sub-folders. Upload every file to the repo root.
 Push the folder to a GitHub repo → vercel.com → Add New → Project → import it →
 Framework preset **Other**, no build command, output directory `./` → Deploy.
 
-## Switch things on in `assets/data/config.js`
+## Sound
+The background score is generated live in the browser — there are no audio
+files to upload. Visitors choose "Enter with sound" on the title card, or use
+the equaliser button in the header. The choice is remembered.
+
+## Switch things on in `config.js`
 Everything below stays hidden until filled — nothing fake ever shows.
 - `pdfBase` — folder URL of the paper PDFs (Cambridge names, e.g. `9706_s23_qp_22.pdf`)
 - `intakeDate` — e.g. `"2026-10-11T19:30:00+05:00"` → live countdown on Home + Classes
